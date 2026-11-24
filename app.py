@@ -121,13 +121,9 @@ st.info(
 )
 
 faq = load_faq()
-st.write("FAQ entries loaded:", len(faq))
 
 if not faq:
-    st.error("FAQ file is empty or could not be loaded.")
-else:
-    st.success(f"Knowledge base loaded: {len(faq)} questions")
-
+    st.error("Unable to load the knowledge base. Please try again.")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
